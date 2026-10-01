@@ -1,0 +1,1628 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>کافه نور | قهوه تازه‌رست، دسر خانگی و لحظه‌های گرم</title>
+<meta name="description" content="کافه نور؛ کافی‌شاپ مدرن و لوکس با قهوه‌ی تازه‌رست، چای و دمنوش ایرانی، نوشیدنی‌های سرد، دسرهای خانگی و غذاهای تازه. فضایی گرم و دنج برای دورهمی‌های خوب.">
+<meta name="theme-color" content="#0b0806">
+<meta property="og:title" content="کافه نور | قهوه تازه‌رست و لحظه‌های گرم">
+<meta property="og:description" content="قهوه‌ی تخصصی، دسر خانگی و فضایی لوکس در قلب شهر. به کافه نور خوش آمدید.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230b0806'/%3E%3Ctext x='50' y='72' font-size='62' text-anchor='middle' fill='%23d4af37'%3E%E2%98%95%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://images.pexels.com">
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&family=Lalezar&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   کافه نور — استایل کامل درون‌خطی (بدون فایل خارجی)
+   ============================================================ */
+:root{
+  --ink:#0b0806;
+  --ink-2:#0f0b08;
+  --surface:#180f0a;
+  --surface-2:#221610;
+  --surface-3:#2c1d15;
+  --line:rgba(212,175,55,.16);
+  --line-2:rgba(212,175,55,.34);
+  --gold:#d4af37;
+  --gold-l:#f2dc95;
+  --gold-d:#9c7c1f;
+  --cream:#f7edda;
+  --cream-2:#d9c9b0;
+  --muted:#a4907a;
+  --green:#25d366;
+  --radius:20px;
+  --radius-sm:14px;
+  --maxw:1200px;
+  --ease:cubic-bezier(.2,.75,.25,1);
+  --t:.45s var(--ease);
+  --shadow-lg:0 40px 80px -30px rgba(0,0,0,.9);
+  --shadow-md:0 22px 45px -24px rgba(0,0,0,.85);
+  --shadow-gold:0 22px 50px -22px rgba(212,175,55,.42);
+  --font-body:'Vazirmatn','Vazir','IRANSans','Sahel',Tahoma,'Segoe UI',sans-serif;
+  --font-disp:'Lalezar','Vazirmatn',Tahoma,sans-serif;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  font-family:var(--font-body);
+  background:var(--ink);
+  color:var(--cream);
+  line-height:1.9;
+  font-size:16px;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+body.no-scroll{overflow:hidden}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;border:0;background:none;color:inherit}
+ul{margin:0;padding:0;list-style:none}
+h1,h2,h3,h4,p{margin:0}
+
+/* ---------- پس‌زمینه‌ی سراسری ---------- */
+.bg-layer{position:fixed;inset:0;z-index:-2;pointer-events:none;overflow:hidden}
+.bg-layer::before{
+  content:'';position:absolute;inset:0;
+  background:
+    radial-gradient(900px 620px at 88% -6%, rgba(212,175,55,.16), transparent 62%),
+    radial-gradient(760px 560px at 6% 12%, rgba(120,72,32,.28), transparent 66%),
+    radial-gradient(1000px 700px at 50% 108%, rgba(212,175,55,.10), transparent 68%),
+    linear-gradient(168deg,#0e0a07 0%,#0b0806 42%,#120c08 100%);
+}
+.bg-grain{
+  position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.5;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='.35'/%3E%3C/svg%3E");
+}
+
+/* ---------- ابزارها ---------- */
+.container{width:100%;max-width:var(--maxw);margin-inline:auto;padding-inline:22px}
+.section{padding:110px 0;position:relative}
+.section--tight{padding:86px 0}
+.gold-text{
+  background:linear-gradient(100deg,var(--gold-l) 0%,var(--gold) 42%,var(--gold-d) 78%,var(--gold-l) 100%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.section-head{text-align:center;max-width:720px;margin:0 auto 58px}
+.kicker{
+  display:inline-flex;align-items:center;gap:12px;
+  font-size:.82rem;letter-spacing:.22em;font-weight:700;color:var(--gold);
+  text-transform:uppercase;margin-bottom:16px;
+}
+.kicker::before,.kicker::after{content:'';width:34px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+.section-title{font-family:var(--font-disp);font-weight:400;font-size:clamp(2rem,4.6vw,3.15rem);line-height:1.3;letter-spacing:.5px}
+.section-sub{color:var(--muted);margin-top:16px;font-size:1.02rem;line-height:2}
+.ornament{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:22px}
+.ornament i{display:block;width:6px;height:6px;background:var(--gold);transform:rotate(45deg);opacity:.9}
+.ornament span{display:block;width:70px;height:1px;background:linear-gradient(90deg,transparent,var(--line-2),transparent)}
+
+/* ---------- انیمیشن ورود ---------- */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  .reveal{opacity:1;transform:none;transition:none}
+  html{scroll-behavior:auto}
+  *{animation-duration:.001ms !important;animation-iteration-count:1 !important}
+}
+
+/* ============================== هدر ============================== */
+.site-header{position:fixed;inset:0 0 auto 0;z-index:120;transition:var(--t)}
+.header-bg{
+  position:absolute;inset:0;opacity:0;transition:var(--t);
+  background:rgba(11,8,6,.82);
+  -webkit-backdrop-filter:blur(16px) saturate(140%);
+  backdrop-filter:blur(16px) saturate(140%);
+  border-bottom:1px solid transparent;
+}
+.site-header.is-stuck .header-bg{opacity:1;border-bottom-color:var(--line)}
+.header-inner{
+  position:relative;display:flex;align-items:center;justify-content:space-between;gap:18px;
+  min-height:86px;transition:var(--t);
+}
+.site-header.is-stuck .header-inner{min-height:70px}
+
+.brand{display:flex;align-items:center;gap:13px}
+.brand-mark{
+  width:46px;height:46px;border-radius:14px;flex:0 0 auto;
+  display:grid;place-items:center;color:var(--gold-l);
+  background:linear-gradient(150deg,#2a1c12,#140d08);
+  border:1px solid var(--line-2);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.06),0 10px 24px -12px rgba(212,175,55,.5);
+  transition:var(--t);
+}
+.brand:hover .brand-mark{transform:rotate(-6deg) scale(1.05);box-shadow:inset 0 1px 0 rgba(255,255,255,.08),0 14px 30px -12px rgba(212,175,55,.75)}
+.brand-mark svg{width:25px;height:25px}
+.brand-text{display:flex;flex-direction:column;line-height:1.25}
+.brand-text strong{font-family:var(--font-disp);font-weight:400;font-size:1.42rem;letter-spacing:.6px;color:var(--cream)}
+.brand-text em{font-style:normal;font-size:.62rem;letter-spacing:.34em;color:var(--gold);opacity:.85}
+
+.main-nav ul{display:flex;align-items:center;gap:6px}
+.main-nav a{
+  position:relative;display:block;padding:10px 15px;border-radius:12px;
+  font-size:.96rem;font-weight:500;color:var(--cream-2);transition:var(--t);
+}
+.main-nav a::after{
+  content:'';position:absolute;inset-inline:15px;bottom:5px;height:2px;border-radius:2px;
+  background:linear-gradient(90deg,var(--gold),var(--gold-l));
+  transform:scaleX(0);transform-origin:right;transition:transform .4s var(--ease);
+}
+.main-nav a:hover,.main-nav a.is-active{color:var(--gold-l)}
+.main-nav a:hover::after,.main-nav a.is-active::after{transform:scaleX(1)}
+
+.header-actions{display:flex;align-items:center;gap:12px}
+
+.btn{
+  position:relative;display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  padding:13px 26px;border-radius:999px;font-size:.95rem;font-weight:700;
+  letter-spacing:.2px;white-space:nowrap;overflow:hidden;
+  transition:transform var(--ease) .3s,box-shadow .35s ease,background .35s ease,color .35s ease,border-color .35s ease;
+}
+.btn svg{width:18px;height:18px;flex:0 0 auto}
+.btn-gold{
+  color:#22160a;
+  background:linear-gradient(135deg,var(--gold-l),var(--gold) 48%,var(--gold-d));
+  box-shadow:var(--shadow-gold);
+}
+.btn-gold::after{
+  content:'';position:absolute;top:0;bottom:0;width:45%;left:-70%;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.65),transparent);
+  transform:skewX(-18deg);transition:left .75s var(--ease);
+}
+.btn-gold:hover::after{left:130%}
+.btn-gold:hover{transform:translateY(-3px);box-shadow:0 26px 55px -20px rgba(212,175,55,.75)}
+.btn-ghost{
+  color:var(--cream);border:1px solid var(--line-2);background:rgba(255,255,255,.02);
+  -webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);
+}
+.btn-ghost:hover{transform:translateY(-3px);border-color:var(--gold);color:var(--gold-l);background:rgba(212,175,55,.09)}
+.btn-sm{padding:11px 20px;font-size:.9rem}
+.btn-green{color:#062b13;background:linear-gradient(135deg,#5ff08f,#25d366 55%,#12a34c);box-shadow:0 20px 45px -20px rgba(37,211,102,.65)}
+.btn-green:hover{transform:translateY(-3px);box-shadow:0 26px 55px -18px rgba(37,211,102,.85)}
+.btn-block{width:100%}
+
+.nav-toggle{
+  display:none;width:46px;height:46px;border-radius:13px;place-items:center;
+  border:1px solid var(--line-2);background:rgba(255,255,255,.03);
+}
+.nav-toggle span{position:relative;display:block;width:20px;height:2px;border-radius:2px;background:var(--cream);transition:var(--t)}
+.nav-toggle span::before,.nav-toggle span::after{
+  content:'';position:absolute;left:0;width:20px;height:2px;border-radius:2px;background:var(--cream);transition:var(--t);
+}
+.nav-toggle span::before{top:-6px}
+.nav-toggle span::after{top:6px}
+.nav-toggle.is-open span{background:transparent}
+.nav-toggle.is-open span::before{top:0;transform:rotate(45deg);background:var(--gold)}
+.nav-toggle.is-open span::after{top:0;transform:rotate(-45deg);background:var(--gold)}
+
+/* ============================== هیرو ============================== */
+.hero{position:relative;min-height:100svh;display:grid;place-items:center;overflow:hidden;padding:150px 0 100px}
+.hero-bg{position:absolute;inset:-3%;z-index:0}
+.hero-bg img{width:100%;height:100%;object-fit:cover;animation:kb 30s ease-in-out infinite alternate}
+@keyframes kb{from{transform:scale(1.02) translate3d(0,0,0)}to{transform:scale(1.14) translate3d(1.2%,-1.6%,0)}}
+.hero-veil{
+  position:absolute;inset:0;z-index:1;
+  background:
+    linear-gradient(180deg,rgba(11,8,6,.92) 0%,rgba(11,8,6,.62) 32%,rgba(11,8,6,.72) 62%,var(--ink) 100%),
+    radial-gradient(760px 520px at 78% 30%,rgba(212,175,55,.20),transparent 65%),
+    radial-gradient(600px 480px at 12% 78%,rgba(111,78,55,.42),transparent 68%);
+}
+.hero-inner{position:relative;z-index:2;text-align:center;max-width:900px;margin-inline:auto}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:10px;padding:9px 20px;border-radius:999px;margin-bottom:26px;
+  font-size:.84rem;font-weight:600;color:var(--gold-l);
+  border:1px solid var(--line-2);background:rgba(212,175,55,.09);
+  -webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);
+}
+.hero-badge .dot{width:7px;height:7px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 0 rgba(212,175,55,.7);animation:pulse 2.4s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 11px rgba(212,175,55,0)}100%{box-shadow:0 0 0 0 rgba(212,175,55,0)}}
+.hero-title{
+  font-family:var(--font-disp);font-weight:400;
+  font-size:clamp(2.5rem,7.4vw,5.3rem);line-height:1.22;letter-spacing:.5px;
+  text-shadow:0 22px 60px rgba(0,0,0,.75);
+}
+.hero-title span{display:block}
+.hero-sub{
+  max-width:660px;margin:26px auto 0;color:var(--cream-2);
+  font-size:clamp(1rem,1.55vw,1.16rem);line-height:2.15;
+}
+.hero-cta{display:flex;flex-wrap:wrap;gap:16px;justify-content:center;margin-top:40px}
+.hero-stats{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:14px;
+  max-width:720px;margin:60px auto 0;padding-top:34px;border-top:1px solid var(--line);
+}
+.stat b{display:block;font-family:var(--font-disp);font-weight:400;font-size:clamp(1.6rem,3.4vw,2.2rem);color:var(--gold-l)}
+.stat span{display:block;font-size:.86rem;color:var(--muted);margin-top:4px}
+.scroll-cue{
+  position:absolute;bottom:26px;left:50%;transform:translateX(-50%);z-index:3;
+  display:grid;justify-items:center;gap:8px;color:var(--muted);font-size:.74rem;letter-spacing:.2em;
+}
+.scroll-cue i{display:block;width:1px;height:46px;background:linear-gradient(180deg,var(--gold),transparent);animation:cue 2s ease-in-out infinite}
+@keyframes cue{0%,100%{opacity:.25;transform:scaleY(.6)}50%{opacity:1;transform:scaleY(1)}}
+
+/* ============================== نوار ویژه ============================== */
+.marquee{
+  position:relative;border-block:1px solid var(--line);
+  background:linear-gradient(90deg,rgba(212,175,55,.07),rgba(212,175,55,.02),rgba(212,175,55,.07));
+  overflow:hidden;padding:15px 0;direction:ltr;
+}
+.marquee-track{display:flex;gap:46px;width:max-content;animation:slide 36s linear infinite}
+.marquee-track span{display:inline-flex;align-items:center;gap:12px;font-size:.9rem;color:var(--cream-2);white-space:nowrap;direction:rtl}
+.marquee-track span::before{content:'';width:5px;height:5px;background:var(--gold);transform:rotate(45deg);flex:0 0 auto}
+@keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.marquee-track{animation:none}}
+
+/* ============================== منو ============================== */
+.menu-wrap{position:relative}
+.tabs{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-bottom:44px}
+.tab{
+  padding:11px 22px;border-radius:999px;font-size:.93rem;font-weight:600;color:var(--cream-2);
+  border:1px solid var(--line);background:rgba(255,255,255,.02);transition:var(--t);
+}
+.tab:hover{color:var(--gold-l);border-color:var(--line-2);transform:translateY(-2px)}
+.tab.is-active{
+  color:#22160a;border-color:transparent;
+  background:linear-gradient(135deg,var(--gold-l),var(--gold) 55%,var(--gold-d));
+  box-shadow:var(--shadow-gold);
+}
+.dish-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(272px,1fr));gap:26px}
+.dish{
+  position:relative;display:flex;flex-direction:column;overflow:hidden;
+  border-radius:var(--radius);border:1px solid var(--line);
+  background:linear-gradient(180deg,var(--surface) 0%,var(--surface-2) 100%);
+  box-shadow:var(--shadow-md);
+  transition:transform .5s var(--ease),border-color .5s ease,box-shadow .5s ease;
+}
+.dish:hover{
+  transform:translateY(-9px);border-color:rgba(212,175,55,.5);
+  box-shadow:var(--shadow-lg),0 30px 60px -34px rgba(212,175,55,.55),inset 0 0 0 1px rgba(212,175,55,.16);
+}
+.dish-media{position:relative;aspect-ratio:4/3;overflow:hidden;background:var(--surface-3)}
+.dish-media img{width:100%;height:100%;object-fit:cover;transition:transform 1s var(--ease),filter .6s ease}
+.dish:hover .dish-media img{transform:scale(1.09)}
+.dish-media::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,8,6,0) 45%,rgba(11,8,6,.78) 100%)}
+.dish-tag{
+  position:absolute;top:14px;inset-inline-start:14px;z-index:3;
+  padding:6px 14px;border-radius:999px;font-size:.74rem;font-weight:700;color:#22160a;
+  background:linear-gradient(135deg,var(--gold-l),var(--gold));box-shadow:0 10px 24px -12px rgba(0,0,0,.9);
+}
+.dish-body{padding:20px 22px 24px;display:flex;flex-direction:column;flex:1}
+.dish-row{display:flex;align-items:baseline;gap:10px}
+.dish-name{font-family:var(--font-disp);font-weight:400;font-size:1.32rem;color:var(--cream);letter-spacing:.4px}
+.dish-dots{flex:1;border-bottom:1px dotted rgba(212,175,55,.36);transform:translateY(-5px);min-width:16px}
+.dish-price{color:var(--gold-l);font-weight:700;font-size:1rem;white-space:nowrap}
+.dish-price small{font-size:.72rem;color:var(--muted);font-weight:500;margin-inline-start:3px}
+.dish-desc{color:var(--muted);font-size:.9rem;line-height:1.95;margin-top:12px}
+.dish-foot{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:18px;padding-top:16px;border-top:1px solid var(--line)}
+.stars{display:inline-flex;gap:3px;color:var(--gold)}
+.stars svg{width:14px;height:14px}
+.stars-5,.stars-4{
+  display:inline-block;height:13px;background-color:var(--gold);vertical-align:middle;
+  -webkit-mask-image:var(--star);mask-image:var(--star);
+  -webkit-mask-repeat:repeat-x;mask-repeat:repeat-x;
+  -webkit-mask-size:16px 13px;mask-size:16px 13px;
+}
+.stars-5{width:80px}
+.stars-4{width:64px}
+:root{
+  --star:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='m12 2 3 6.6 7 .9-5.1 4.8 1.3 7-6.2-3.5L5.8 21l1.3-7L2 9.5l7-.9L12 2Z'/%3E%3C/svg%3E");
+}
+.dish-order{display:inline-flex;align-items:center;gap:7px;font-size:.84rem;font-weight:600;color:var(--gold-l);opacity:.85;transition:var(--t)}
+.dish-order:hover{opacity:1;gap:11px}
+.dish-order svg{width:15px;height:15px}
+
+/* ============================== درباره ما ============================== */
+.about-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:64px;align-items:center}
+.about-visual{position:relative;padding-bottom:56px}
+.about-frame{
+  position:relative;border-radius:26px;overflow:hidden;
+  border:1px solid var(--line-2);box-shadow:var(--shadow-lg);
+}
+.about-frame img{width:100%;aspect-ratio:4/5;object-fit:cover;transition:transform 1.2s var(--ease)}
+.about-frame:hover img{transform:scale(1.05)}
+.about-mini{
+  position:absolute;bottom:0;inset-inline-start:0;width:56%;border-radius:20px;overflow:hidden;
+  border:6px solid var(--ink);box-shadow:var(--shadow-lg);
+}
+.about-mini img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.about-badge{
+  position:absolute;top:22px;inset-inline-end:-16px;
+  display:grid;place-items:center;text-align:center;
+  width:112px;height:112px;border-radius:50%;
+  background:linear-gradient(150deg,var(--gold-l),var(--gold) 50%,var(--gold-d));
+  color:#22160a;box-shadow:var(--shadow-gold);animation:float 6s ease-in-out infinite;
+}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+.about-badge b{font-family:var(--font-disp);font-weight:400;font-size:1.9rem;line-height:1}
+.about-badge span{display:block;font-size:.68rem;font-weight:700;letter-spacing:.04em;margin-top:2px}
+.about-text .kicker{justify-content:flex-start}
+.about-text .kicker::before{display:none}
+.about-title{font-family:var(--font-disp);font-weight:400;font-size:clamp(1.9rem,3.9vw,2.85rem);line-height:1.35}
+.about-p{color:var(--cream-2);margin-top:20px;line-height:2.15;font-size:1rem}
+.about-p + .about-p{margin-top:14px}
+.about-features{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:32px}
+.feature{
+  display:flex;gap:13px;align-items:flex-start;padding:16px 17px;border-radius:var(--radius-sm);
+  border:1px solid var(--line);background:rgba(255,255,255,.02);transition:var(--t);
+}
+.feature:hover{border-color:var(--line-2);background:rgba(212,175,55,.06);transform:translateY(-4px)}
+.feature-ic{
+  width:40px;height:40px;flex:0 0 auto;border-radius:12px;display:grid;place-items:center;
+  color:var(--gold-l);background:linear-gradient(150deg,#2c1d12,#160e09);border:1px solid var(--line-2);
+}
+.feature-ic svg{width:20px;height:20px}
+.feature b{display:block;font-size:.96rem;color:var(--cream)}
+.feature span{display:block;font-size:.82rem;color:var(--muted);line-height:1.8;margin-top:2px}
+
+/* ============================== گالری ============================== */
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;grid-auto-rows:190px}
+.g-item{
+  position:relative;overflow:hidden;border-radius:var(--radius-sm);
+  border:1px solid var(--line);cursor:pointer;background:var(--surface-3);
+}
+.g-item img{width:100%;height:100%;object-fit:cover;transition:transform 1.1s var(--ease),filter .6s ease}
+.g-item::after{
+  content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,8,6,.05),rgba(11,8,6,.82));
+  opacity:.55;transition:opacity .5s ease;
+}
+.g-item:hover img{transform:scale(1.09)}
+.g-item:hover::after{opacity:.85}
+.g-cap{
+  position:absolute;inset-inline:0;bottom:0;z-index:2;padding:16px 18px;
+  transform:translateY(10px);opacity:0;transition:var(--t);
+}
+.g-item:hover .g-cap{transform:none;opacity:1}
+.g-cap b{display:block;font-size:.95rem;color:var(--cream)}
+.g-cap span{display:block;font-size:.76rem;color:var(--gold-l)}
+.g-zoom{
+  position:absolute;top:14px;inset-inline-end:14px;z-index:2;width:38px;height:38px;border-radius:50%;
+  display:grid;place-items:center;color:#22160a;
+  background:linear-gradient(135deg,var(--gold-l),var(--gold));
+  transform:scale(.6);opacity:0;transition:var(--t);
+}
+.g-item:hover .g-zoom{transform:scale(1);opacity:1}
+.g-zoom svg{width:17px;height:17px}
+.g-a{grid-column:span 2;grid-row:span 2}
+.g-b{grid-column:span 2;grid-row:span 1}
+.g-c{grid-column:span 1;grid-row:span 1}
+.g-d{grid-column:span 1;grid-row:span 1}
+
+/* ============================== نظرات ============================== */
+.rating-box{
+  display:flex;align-items:center;justify-content:center;gap:26px;flex-wrap:wrap;
+  max-width:640px;margin:0 auto 48px;padding:22px 30px;border-radius:999px;
+  border:1px solid var(--line);background:linear-gradient(90deg,rgba(212,175,55,.08),rgba(212,175,55,.02));
+}
+.rating-box b{font-family:var(--font-disp);font-weight:400;font-size:2.1rem;color:var(--gold-l)}
+.rating-box .txt{font-size:.9rem;color:var(--cream-2)}
+.rating-box .sep{width:1px;height:40px;background:var(--line-2)}
+.tst-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.tst{
+  position:relative;padding:34px 30px 30px;border-radius:var(--radius);
+  border:1px solid var(--line);background:linear-gradient(180deg,var(--surface),var(--surface-2));
+  box-shadow:var(--shadow-md);transition:var(--t);overflow:hidden;
+}
+.tst::before{
+  content:'”';position:absolute;top:-6px;inset-inline-start:22px;
+  font-family:Georgia,serif;font-size:7rem;line-height:1;color:rgba(212,175,55,.16);
+}
+.tst:hover{transform:translateY(-8px);border-color:var(--line-2);box-shadow:var(--shadow-lg),0 30px 60px -36px rgba(212,175,55,.5)}
+.tst-stars{position:relative;z-index:1;display:inline-flex;gap:3px;color:var(--gold);margin-bottom:16px}
+.tst-stars svg{width:16px;height:16px}
+.tst-text{position:relative;z-index:1;color:var(--cream-2);font-size:.96rem;line-height:2.1}
+.tst-person{display:flex;align-items:center;gap:14px;margin-top:24px;padding-top:20px;border-top:1px solid var(--line)}
+.tst-person img{width:52px;height:52px;border-radius:50%;object-fit:cover;border:2px solid var(--line-2)}
+.tst-person b{display:block;font-size:.96rem;color:var(--cream)}
+.tst-person span{display:block;font-size:.8rem;color:var(--muted)}
+
+/* ============================== تماس ============================== */
+.contact-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:30px;align-items:stretch}
+.info-card{
+  padding:34px 32px;border-radius:var(--radius);border:1px solid var(--line);
+  background:linear-gradient(180deg,var(--surface),var(--surface-2));box-shadow:var(--shadow-md);
+}
+.info-list{display:grid;gap:22px}
+.info-row{display:flex;gap:16px;align-items:flex-start}
+.info-ic{
+  width:48px;height:48px;flex:0 0 auto;border-radius:15px;display:grid;place-items:center;
+  color:var(--gold-l);background:linear-gradient(150deg,#2c1d12,#160e09);border:1px solid var(--line-2);
+  transition:var(--t);
+}
+.info-row:hover .info-ic{transform:translateY(-3px) rotate(-4deg);border-color:var(--gold)}
+.info-ic svg{width:22px;height:22px}
+.info-row b{display:block;font-size:.84rem;color:var(--gold);letter-spacing:.06em;margin-bottom:4px}
+.info-row p{color:var(--cream-2);font-size:.96rem;line-height:1.95}
+.info-row a{transition:var(--t)}
+.info-row a:hover{color:var(--gold-l)}
+.hours{margin-top:26px;padding-top:24px;border-top:1px solid var(--line)}
+.hours h4{font-family:var(--font-disp);font-weight:400;font-size:1.28rem;color:var(--cream);margin-bottom:14px}
+.hours-row{display:flex;align-items:baseline;gap:10px;font-size:.92rem;color:var(--cream-2);padding:7px 0}
+.hours-row em{flex:1;border-bottom:1px dotted rgba(212,175,55,.3);transform:translateY(-4px)}
+.hours-row span{color:var(--gold-l);font-weight:600;white-space:nowrap}
+.cta-card{
+  position:relative;display:flex;flex-direction:column;justify-content:center;gap:18px;
+  padding:38px 32px;border-radius:var(--radius);overflow:hidden;
+  border:1px solid var(--line-2);
+  background:
+    radial-gradient(420px 300px at 80% 0%,rgba(212,175,55,.22),transparent 70%),
+    linear-gradient(180deg,#241811,#140d09);
+  box-shadow:var(--shadow-lg);
+}
+.cta-card h3{font-family:var(--font-disp);font-weight:400;font-size:1.75rem;line-height:1.4}
+.cta-card p{color:var(--cream-2);font-size:.95rem;line-height:2}
+.cta-actions{display:grid;gap:12px;margin-top:6px}
+.cta-note{font-size:.8rem;color:var(--muted);text-align:center}
+.map-strip{
+  margin-top:26px;display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;
+  padding:18px 22px;border-radius:var(--radius-sm);
+  border:1px dashed var(--line-2);background:rgba(212,175,55,.05);
+}
+.map-strip p{font-size:.9rem;color:var(--cream-2)}
+.map-strip a{display:inline-flex;align-items:center;gap:8px;font-size:.88rem;font-weight:700;color:var(--gold-l)}
+.map-strip a:hover{text-decoration:underline}
+.map-strip svg{width:17px;height:17px}
+
+/* ============================== فوتر ============================== */
+.site-footer{position:relative;border-top:1px solid var(--line);background:linear-gradient(180deg,rgba(11,8,6,0),rgba(24,15,10,.7) 40%,#0a0705)}
+.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.2fr;gap:42px;padding:74px 0 52px}
+.footer-brand{display:flex;align-items:center;gap:13px;margin-bottom:18px}
+.footer-about p{color:var(--muted);font-size:.92rem;line-height:2.05}
+.socials{display:flex;gap:10px;margin-top:22px}
+.socials a{
+  width:42px;height:42px;border-radius:13px;display:grid;place-items:center;color:var(--cream-2);
+  border:1px solid var(--line);background:rgba(255,255,255,.02);transition:var(--t);
+}
+.socials a:hover{color:#22160a;transform:translateY(-4px);border-color:transparent;background:linear-gradient(135deg,var(--gold-l),var(--gold));box-shadow:var(--shadow-gold)}
+.socials svg{width:19px;height:19px}
+.footer-col h4{font-family:var(--font-disp);font-weight:400;font-size:1.2rem;margin-bottom:18px;color:var(--cream)}
+.footer-col li + li{margin-top:11px}
+.footer-col a{color:var(--muted);font-size:.91rem;transition:var(--t);display:inline-flex;align-items:center;gap:8px}
+.footer-col a::before{content:'';width:5px;height:5px;background:var(--gold);transform:rotate(45deg);opacity:.5;transition:var(--t)}
+.footer-col a:hover{color:var(--gold-l);transform:translateX(-4px)}
+.footer-col a:hover::before{opacity:1}
+.foot-contact li{display:flex;gap:11px;color:var(--muted);font-size:.91rem;line-height:1.95}
+.foot-contact svg{width:17px;height:17px;flex:0 0 auto;margin-top:6px;color:var(--gold)}
+.footer-bottom{
+  display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;
+  padding:22px 0;border-top:1px solid var(--line);color:var(--muted);font-size:.85rem;
+}
+.footer-bottom b{color:var(--gold-l);font-weight:600}
+
+/* ============================== دکمه‌های شناور ============================== */
+.fab{
+  position:fixed;inset-inline-start:22px;z-index:110;width:54px;height:54px;border-radius:50%;
+  display:grid;place-items:center;box-shadow:var(--shadow-lg);transition:var(--t);
+}
+.fab svg{width:25px;height:25px}
+.fab-wa{bottom:24px;color:#062b13;background:linear-gradient(135deg,#5ff08f,#25d366 60%,#12a34c)}
+.fab-wa:hover{transform:scale(1.09) translateY(-3px)}
+.fab-top{
+  bottom:90px;color:var(--gold-l);border:1px solid var(--line-2);background:rgba(24,15,10,.9);
+  -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
+  opacity:0;visibility:hidden;transform:translateY(14px);
+}
+.fab-top.is-on{opacity:1;visibility:visible;transform:none}
+.fab-top:hover{border-color:var(--gold);background:rgba(212,175,55,.16)}
+
+/* ============================== لایت‌باکس ============================== */
+.lightbox{
+  position:fixed;inset:0;z-index:200;display:grid;place-items:center;padding:26px;
+  background:rgba(6,4,3,.94);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
+  opacity:0;visibility:hidden;transition:opacity .4s ease,visibility .4s ease;
+}
+.lightbox.is-open{opacity:1;visibility:visible}
+.lightbox img{max-width:min(1080px,92vw);max-height:84vh;border-radius:18px;border:1px solid var(--line-2);box-shadow:var(--shadow-lg)}
+.lightbox-close{
+  position:absolute;top:22px;inset-inline-end:22px;width:48px;height:48px;border-radius:50%;
+  display:grid;place-items:center;color:var(--cream);border:1px solid var(--line-2);background:rgba(255,255,255,.05);
+  transition:var(--t);
+}
+.lightbox-close:hover{color:#22160a;background:linear-gradient(135deg,var(--gold-l),var(--gold))}
+.lightbox-close svg{width:20px;height:20px}
+.lightbox-cap{position:absolute;bottom:30px;text-align:center;color:var(--cream-2);font-size:.92rem}
+
+/* ============================== ریسپانسیو ============================== */
+@media (max-width:1080px){
+  .about-grid{grid-template-columns:1fr;gap:56px}
+  .about-visual{max-width:540px;margin-inline:auto}
+  .tst-grid{grid-template-columns:1fr 1fr}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:36px}
+  .contact-grid{grid-template-columns:1fr}
+}
+@media (max-width:920px){
+  .nav-toggle{display:grid}
+  .main-nav{
+    position:absolute;top:100%;inset-inline:16px;padding:16px;
+    border-radius:var(--radius);border:1px solid var(--line);
+    background:rgba(16,11,8,.98);
+    -webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);
+    box-shadow:var(--shadow-lg);
+    opacity:0;visibility:hidden;transform:translateY(-14px);transition:var(--t);
+  }
+  .main-nav.is-open{opacity:1;visibility:visible;transform:none}
+  .main-nav ul{flex-direction:column;align-items:stretch;gap:4px}
+  .main-nav a{padding:13px 16px;border-radius:12px}
+  .main-nav a::after{display:none}
+  .main-nav a:hover,.main-nav a.is-active{background:rgba(212,175,55,.12)}
+  .header-actions .btn-gold{display:none}
+  .section{padding:88px 0}
+  .gallery{grid-template-columns:repeat(2,1fr);grid-auto-rows:170px}
+  .g-a{grid-column:span 2;grid-row:span 2}
+  .g-b{grid-column:span 2}
+  .rating-box{border-radius:26px}
+}
+@media (max-width:680px){
+  body{font-size:15.5px}
+  .container{padding-inline:18px}
+  .section{padding:74px 0}
+  .hero{padding:126px 0 84px;min-height:auto}
+  .hero-stats{grid-template-columns:1fr;gap:20px;text-align:center}
+  .hero-cta .btn{width:100%}
+  .dish-grid{grid-template-columns:1fr;gap:22px}
+  .tst-grid{grid-template-columns:1fr}
+  .about-features{grid-template-columns:1fr}
+  .about-mini{position:relative;width:100%;margin-top:-46px;inset-inline-start:auto;border-width:5px}
+  .about-visual{padding-bottom:0}
+  .about-badge{width:92px;height:92px;inset-inline-end:8px;top:14px}
+  .about-badge b{font-size:1.5rem}
+  .footer-grid{grid-template-columns:1fr;gap:34px;padding:56px 0 40px}
+  .footer-bottom{justify-content:center;text-align:center}
+  .info-card,.cta-card{padding:26px 22px}
+  .gallery{grid-template-columns:1fr;grid-auto-rows:220px}
+  .g-a,.g-b{grid-column:span 1;grid-row:span 1}
+  .fab{width:50px;height:50px;inset-inline-start:16px}
+  .fab-wa{bottom:18px}
+  .fab-top{bottom:78px}
+  .scroll-cue{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- پس‌زمینه‌ی سراسری -->
+<div class="bg-layer" aria-hidden="true"></div>
+<div class="bg-grain" aria-hidden="true"></div>
+
+<!-- ============================ هدر ============================ -->
+<header class="site-header" id="siteHeader">
+  <div class="header-bg" aria-hidden="true"></div>
+  <div class="container header-inner">
+    <a class="brand" href="#home" aria-label="کافه نور — صفحه اصلی">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 9h13v6a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5V9Z"/>
+          <path d="M17 10h1.8a2.7 2.7 0 0 1 0 5.4H17"/>
+          <path d="M8 6c0-1.1 1.3-1.4 1.3-2.5M12.4 6c0-1.1 1.3-1.4 1.3-2.5"/>
+        </svg>
+      </span>
+      <span class="brand-text">
+        <strong>کافه نور</strong>
+        <em>CAFÉ NOOR</em>
+      </span>
+    </a>
+
+    <nav class="main-nav" id="mainNav" aria-label="ناوبری اصلی">
+      <ul>
+        <li><a href="#home" class="is-active">خانه</a></li>
+        <li><a href="#menu">منو</a></li>
+        <li><a href="#about">درباره ما</a></li>
+        <li><a href="#gallery">گالری</a></li>
+        <li><a href="#testimonials">نظرات</a></li>
+        <li><a href="#contact">تماس</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+      <a class="btn btn-gold btn-sm" href="#contact">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5h4l2 5-2.5 1.5a12 12 0 0 0 6 6L14 15l5 2v4a12 12 0 0 1-12-12Z"/></svg>
+        رزرو میز
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="باز و بسته کردن منو" aria-expanded="false" aria-controls="mainNav">
+        <span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+<!-- ============================ هیرو ============================ -->
+<section class="hero" id="home">
+  <div class="hero-bg" aria-hidden="true">
+    <img src="https://images.pexels.com/photos/35134952/pexels-photo-35134952.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600" alt="">
+  </div>
+  <div class="hero-veil" aria-hidden="true"></div>
+
+  <div class="container hero-inner">
+    <span class="hero-badge reveal"><i class="dot"></i> قهوه‌ی تازه‌رست، هر روز صبح در کافه نور</span>
+
+    <h1 class="hero-title reveal" data-delay="90">
+      <span>به کافه نور</span>
+      <span class="gold-text">خوش آمدید</span>
+    </h1>
+
+    <p class="hero-sub reveal" data-delay="180">
+      جایی دنج در دل شهر که عطر قهوه‌ی تازه‌دم، نور گرم چراغ‌ها و دسرهای خانگی،
+      ساده‌ترین لحظه‌های روزتان را به خاطره‌ای دلچسب تبدیل می‌کند.
+      از یک اسپرسوی غلیظ صبحگاهی تا یک دورهمی طولانی شبانه، میزبان شما هستیم.
+    </p>
+
+    <div class="hero-cta reveal" data-delay="260">
+      <a class="btn btn-gold" href="#menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h14M5 10h14M5 16h9"/></svg>
+        مشاهده منو
+      </a>
+      <a class="btn btn-ghost" href="#contact">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5h4l2 5-2.5 1.5a12 12 0 0 0 6 6L14 15l5 2v4a12 12 0 0 1-12-12Z"/></svg>
+        تماس با ما
+      </a>
+    </div>
+
+    <div class="hero-stats reveal" data-delay="340">
+      <div class="stat"><b>۱۲</b><span>سال تجربه‌ی میزبانی</span></div>
+      <div class="stat"><b>۴۰+</b><span>نوع قهوه و نوشیدنی</span></div>
+      <div class="stat"><b>۴.۹</b><span>امتیاز از ۵ مشتریان</span></div>
+    </div>
+  </div>
+
+  <div class="scroll-cue" aria-hidden="true"><span>اسکرول کنید</span><i></i></div>
+</section>
+
+<!-- ============================ نوار ویژه ============================ -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>قهوه‌ی تک‌خاستگاه تازه‌رست</span>
+    <span>دسرهای خانگی روزانه</span>
+    <span>چای و دمنوش ایرانی</span>
+    <span>صبحانه تا ساعت ۱۲</span>
+    <span>اینترنت پرسرعت و فضای کار</span>
+    <span>رزرو میز برای دورهمی</span>
+    <span>قهوه‌ی تک‌خاستگاه تازه‌رست</span>
+    <span>دسرهای خانگی روزانه</span>
+    <span>چای و دمنوش ایرانی</span>
+    <span>صبحانه تا ساعت ۱۲</span>
+    <span>اینترنت پرسرعت و فضای کار</span>
+    <span>رزرو میز برای دورهمی</span>
+  </div>
+</div>
+
+<!-- ============================ منو ============================ -->
+<section class="section" id="menu">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="kicker">منوی کافه</span>
+      <h2 class="section-title">طعم‌هایی که <span class="gold-text">به‌یاد می‌مانند</span></h2>
+      <p class="section-sub">هر فنجان با دانه‌های تازه‌رست و دستگاه حرفه‌ای دم می‌شود و هر دسر، همان روز در آشپزخانه‌ی کافه نور پخته می‌شود.</p>
+      <div class="ornament" aria-hidden="true"><span></span><i></i><span></span></div>
+    </div>
+
+    <div class="tabs reveal" role="tablist" aria-label="دسته‌بندی منو">
+      <button class="tab is-active" data-filter="all" role="tab" aria-selected="true">همه</button>
+      <button class="tab" data-filter="coffee" role="tab" aria-selected="false">قهوه‌ها</button>
+      <button class="tab" data-filter="tea" role="tab" aria-selected="false">چای‌ها</button>
+      <button class="tab" data-filter="cold" role="tab" aria-selected="false">نوشیدنی‌های سرد</button>
+      <button class="tab" data-filter="dessert" role="tab" aria-selected="false">دسرها</button>
+      <button class="tab" data-filter="food" role="tab" aria-selected="false">غذاها</button>
+    </div>
+
+    <div class="dish-grid" id="dishGrid">
+
+      <!-- قهوه‌ها -->
+      <article class="dish reveal" data-cat="coffee">
+        <div class="dish-media">
+          <span class="dish-tag">پرفروش</span>
+          <img src="https://images.pexels.com/photos/32107359/pexels-photo-32107359.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" alt="اسپرسو دوبل در فنجان سرامیکی روی میز چوبی" loading="lazy">
+        </div>
+        <div class="dish-body">
+          <div class="dish-row"><h3 class="dish-name">اسپرسو دوبل</h3><span class="dish-dots"></span><span class="dish-price">۸۵٬۰۰۰<small>تومان</small></span></div>
+          <p class="dish-desc">دو شات اسپرسوی غلیظ با کرمای مخملی و پایدار؛ تلخی متعادل با رایحه‌ی شکلات تلخ.</p>
+          <div class="dish-foot">
+            <span class="stars stars-5" aria-label="امتیاز ۵ از ۵"></span>
+            <a class="dish-order" href="#contact">سفارش<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></a>
+          </div>
+        </div>
+      </article>
+
+      <article class="dish reveal" data-cat="coffee">
+        <div class="dish-media">
+          <img src="https://images.pexels.com/photos/30446269/pexels-photo-30446269.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" alt="کاپوچینو با فوم شیر و طرح هنری" loading="lazy">
+        </div>
+        <div class="dish-body">
+          <div class="dish-row"><h3 class="dish-name">کاپوچینو</h3><span class="dish-dots"></span><span class="dish-price">۱۳۵٬۰۰۰<small>تومان</small></span></div>
+          <p class="dish-desc">اسپرسوی تازه با فوم شیر مخملی و طرح هنری باریستا روی سطح فنجان.</p>
+          <div class="dish-foot">
+            <span class="stars stars-5" aria-label="امتیاز ۵ از ۵"></span>
+            <a class="dish-order" href="#contact">سفارش<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></a>
+          </div>
+        </div>
+      </article>
+
+      <article class="dish reveal" data-cat="coffee">
+        <div class="dish-media">
+          <img src="https://images.pexels.com/photos/4927237/pexels-photo-4927237.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" alt="ریختن شیر برای ساخت لاته آرت" loading="lazy">
+        </div>
+        <div class="dish-body">
+          <div class="dish-row"><h3 class="dish-name">کافه لاته</h3><span class="dish-dots"></span><span class="dish-price">۱۴۵٬۰۰۰<small>تومان</small></span></div>
+          <p class="dish-desc">شیر بخار‌داده‌شده با اسپرسوی نرم؛ تعادل کامل میان لطافت شیر و عطر قهوه.</p>
+          <div class="dish-foot">
+            <span class="stars stars-5" aria-label="امتیاز ۵ از ۵"></span>
+            <a class="dish-order" href="#contact">سفارش<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></a>
+          </div>
+        </div>
+      </article>
+
+      <article class="dish reveal" data-cat="coffee">
+        <div class="dish-media">
+          <img src="https://images.pexels.com/photos/8059268/pexels-photo-8059268.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" alt="ریختن شیر داخل فنجان قهوه" loading="lazy">
+        </div>
+        <div class="dish-body">
+          <div class="dish-row"><h3 class="dish-name">فلت وایت</h3><span class="dish-dots"></span><span class="dish-price">۱۴۰٬۰۰۰<small>تومان</small></span></div>
+          <p class="dish-desc">نسبت شیر کمتر و قهوه‌ی بیشتر؛ انتخابی برای کسانی که طعم خالص قهوه را دوست دارند.</p>
+          <div class="dish-foot">
+            <span class="stars stars-5" aria-label="امتیاز ۴ از ۵"></span>
+            <a class="dish-order" href="#contact">سفارش<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></a>
+          </div>
+        </div>
+      </article>
+
+      <article class="dish reveal" data-cat="coffee">
+        <div class="dish-media">
+          <span class="dish-tag">پیشنهاد سرآشپز</span>
+          <img src="https://images.pexels.com/photos/4915531/pexels-photo-4915531.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" alt="فنجان قهوه روی میز چوبی در کافه" loading="lazy">
+        </div>
+        <div class="dish-body">
+          <div class="dish-row"><h3 class="dish-name">موکا شکلاتی</h3><span class="dish-dots"></span><span class="dish-price">۱۶۵٬۰۰۰<small>تومان</small></span></div>
+          <p class="dish-desc">ترکیب شکلات بلژیکی تلخ، اسپرسو و شیر بخار؛ دسری در جام.</p>
+          <div class="dish-foot">
+            <span class="stars stars-5" aria-label="امتیاز ۵ از ۵"></span>
+            <a class="dish-order" href="#contact">سفارش<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></a>
+          </div>
+        </div>
+      </article>
+
+      <article class="dish reveal" data-cat="coffee">
+        <div class="dish-media">
+          <img src="https://images.pexels.com/photos/7125781/pexels-photo-7125781.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" alt="دانه‌های قهوه‌ی تازه‌رست" loading="lazy">
+        </div>
+        <div class="dish-body">
+          <div class="dish-row"><h3 class="dish-name">قهوه‌ی دمی V60</h3><span class="dish-dots"></span><span class="dish-price">۱۷۵٬۰۰۰<small>تومان</small></span></div>
+          <p class="dish-desc">دانه‌ی تک‌خاستگاه، دم‌آوری دستی و بدنه‌ی سبک با نت‌های میوه‌ای و گلی.</p>
+          <div class="dish-foot">
+            <span class="stars stars-5" aria-label="امتیاز ۵ از ۵"></span>
+            <a class="dish-order" href="#contact">سفارش<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></a>
+          </div>
+        </div>
+      </article>
+
+      <!-- چای‌ها -->
+      <article class="dish reveal" data-cat="tea">
+        <div class="dish-media">
+          <span class="dish-tag">ایرانی</span>
+          <img src="https://images.pexels.com/photos/370018/pexels-photo-370018.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" alt="چای سیاه داغ در استکان شیشه‌ای روی میز چوبی" loading="lazy">
+        </div>
+        <div class="dish-body">
+          <div class="dish-row"><h3 class="dish-name">چای سیاه ممتاز</h3><span class="dish-dots"></span><span class="dish-price">۶۵٬۰۰۰<small>تومان</small></span></div>
+          <p class="dish-desc">چای بهاره‌ی لاهیجان، دم‌کرده در قوری سنتی با عطر و رنگ ماندگار.</p>
+          <div class="dish-foot">
+            <span class="stars stars-5" aria-label="امتیاز ۵ از ۵"></span>
+            <a class="dish-order" href="#contact">سفارش<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></a>
+          </div>
+        </div>
+      </article>
+
+      <article class="dish reveal" data-cat="tea">
+        <div class="dish-media">
+          <img src="https://images.pexels.com/photos/11029580/pexels-photo-11029580.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" alt="فنجان چای سبز روی میز" loading="lazy">
+        </div>
+        <div class="dish-body">
+          <div class="dish-row"><h3 class="dish-name">چای سبز و نعنا</h3><span class="dish-dots"></span><span class="dish-price">۹۵٬۰۰۰<small>تومان</small></span></div>
+          <p class="dish-desc">برگ‌های تازه‌ی چای سبز همراه نعنا؛ سبک، معطر و آرام‌بخش.</p>
+          <div class="dish-foot">
+            <span class="stars stars-5" aria-label="امتیاز ۴ از ۵"></span>
+            <a class="dish-order" href="#contact">سفارش<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></a>
+          </div>
+        </div>
+      </article>
+
+      <article class="dish reveal" data-cat="tea">
+        <div class="dish-media">
+          <img src="https://images.pexels.com/photos/15675493/pexels-photo-15675493.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" alt="قوری و فنجان چای کنار پنجره" loading="lazy">
+        </div>
+        <div class="dish-body">
+          <div class="dish-row"><h3 class="dish-name">سرو سنتی چای</h3><span class="dish-dots"></span><span class="dish-price">۱۱۰٬۰۰۰<small>تومان</small></span></div>
+          <p class="dish-desc">سرو کامل چای با قوری و سینی سنتی؛ مناسب دورهمی‌های گرم و طولانی.</p>
+          <div class="dish-foot">
+            <span class="stars stars-5" aria-label="امتیاز ۵ از ۵"></span>
+            <a class="dish-order" href="#contact">سفارش<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></a>
+          </div>
+        </div>
+      </article>
+
+      <!-- نوشیدنی‌های سرد -->
+      <article class="dish reveal" data-cat="cold">
+        <div class="dish-media">
+          <img src="https://images.pexels.com/photos/5741238/pexels-photo-5741238.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" alt="آیس آمریکانو در لیوان با یخ" loading="lazy">
+        </div>
+        <div class="dish-body">
+          <div class="dish-row"><h3 class="dish-name">آیس آمریکانو</h3><span class="dish-dots"></span><span class="dish-price">۱۲۵٬۰۰۰<small>تومان</small></span></div>
+          <p class="dish-desc">اسپرسوی تازه روی یخ با عطری خنک و تلخی دلپذیر؛ ساده و بیدارکننده.</p>
+          <div class="dish-foot">
+            <span class="stars stars-5" aria-label="امتیاز ۵ از ۵"></span>
+            <a class="dish-order" href="#contact">سفارش<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></a>
+          </div>
+        </div>
+      </article>
+
+      <article class="dish reveal" data-cat="cold">
+        <div class="dish-media">
+          <span class="dish-tag">محبوب تابستان</span>
+          <img src="https://images.pexels.com/photos/11100423/pexels-photo-11100423.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" alt="آیس لاته در لیوان شیشه‌ای" loading="lazy">
+        </div>
+        <div class="dish-body">
+          <div class="dish-row"><h3 class="dish-name">آیس لاته</h3><span class="dish-dots"></span><span class="dish-price">۱۵۵٬۰۰۰<small>تومان</small></span></div>
+          <p class="dish-desc">شیر سرد و اسپرسوی تازه روی یخ؛ خنک، مخملی و با شیرینی ملایم.</p>
+          <div class="dish-foot">
+            <span class="stars stars-5" aria-label="امتیاز ۵ از ۵"></span>
+            <a class="dish-order" href="#contact">سفارش<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></a>
+          </div>
+        </div>
+      </article>
+
+      <article class="dish reveal" data-cat="cold">
+        <div class="dish-media">
+          <img src="https://images.pexels.com/photos/8605859/pexels-photo-8605859.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" alt="لیوان آیس موکا با شیر و یخ" loading="lazy">
+        </div>
+        <div class="dish-body">
+          <div class="dish-row"><h3 class="dish-name">آیس موکا</h3><span class="dish-dots"></span><span class="dish-price">۱۷۵٬۰۰۰<small>تومان</small></span></div>
+          <p class="dish-desc">شکلات، قهوه و یخ در یک لیوان؛ ترکیبی خنک و شیرین برای روزهای گرم.</p>
+          <div class="dish-foot">
+            <span class="stars stars-4" aria-label="امتیاز ۴ از ۵"></span>
+            <a class="dish-order" href="#contact">سفارش<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></a>
+          </div>
+        </div>
+      </article>
+
+      <article class="dish reveal" data-cat="cold">
+        <div class="dish-media">
+          <img src="https://images.pexels.com/photos/4921559/pexels-photo-4921559.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" alt="کافه گلاسه در لیوان شیشه‌ای" loading="lazy">
+        </div>
+        <div class="dish-body">
+          <div class="dish-row"><h3 class="dish-name">کافه گلاسه</h3><span class="dish-dots"></span><span class="dish-price">۱۸۵٬۰۰۰<small>تومان</small></span></div>
+          <p class="dish-desc">بستنی وانیلی غرق در اسپرسوی سرد؛ کلاسیک ایتالیایی با پایان‌بندی خنک.</p>
+          <div class="dish-foot">
+            <span class="stars stars-5" aria-label="امتیاز ۵ از ۵"></span>
+            <a class="dish-order" href="#contact">سفارش<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></a>
+          </div>
+        </div>
+      </article>
+
+      <article class="dish reveal" data-cat="cold">
+        <div class="dish-media">
+          <img src="https://images.pexels.com/photos/18457338/pexels-photo-18457338.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" alt="نوشیدنی سرد قهوه در لیوان با یخ" loading="lazy">
+        </div>
+        <div class="dish-body">
+          <div class="dish-row"><h3 class="dish-name">آیس کارامل ماکیاتو</h3><span class="dish-dots"></span><span class="dish-price">۱۶۵٬۰۰۰<small>تومان</small></span></div>
+          <p class="dish-desc">کارامل خانگی، شیر سرد و اسپرسوی تازه؛ لایه‌های شیرین و خوش‌عطر.</p>
+          <div class="dish-foot">
+            <span class="stars stars-5" aria-label="امتیاز ۵ از ۵"></span>
+            <a class="dish-order" href="#contact">سفارش<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></a>
+          </div>
+        </div>
+      </article>
+
+      <article class="dish reveal" data-cat="cold">
+        <div class="dish-media">
+          <img src="https://images.pexels.com/photos/1162455/pexels-photo-1162455.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" alt="دو لیوان نوشیدنی سرد روی میز" loading="lazy">
+        </div>
+        <div class="dish-body">
+          <div class="dish-row"><h3 class="dish-name">آیس چای هلویی</h3><span class="dish-dots"></span><span class="dish-price">۱۳۵٬۰۰۰<small>تومان</small></span></div>
+          <p class="dish-desc">چای سرد هلو با یخ و برگ نعنا؛ سبک، میوه‌ای و بدون کافئین.</p>
+          <div class="dish-foot">
+            <span class="stars stars-4" aria-label="امتیاز ۴ از ۵"></span>
+            <a class="dish-order" href="#contact">سفارش<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></a>
+          </div>
+        </div>
+      </article>
+
+      <!-- دسرها -->
+      <article class="dish reveal" data-cat="dessert">
+        <div class="dish-media">
+          <span class="dish-tag">تازه‌ی روز</span>
+          <img src="https://images.pexels.com/photos/6364473/pexels-photo-6364473.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" alt="برش چیزکیک بلوبری با سس توت" loading="lazy">
+        </div>
+        <div class="dish-body">
+          <div class="dish-row"><h3 class="dish-name">چیزکیک بلوبری</h3><span class="dish-dots"></span><span class="dish-price">۱۸۵٬۰۰۰<small>تومان</small></span></div>
+          <p class="dish-desc">چیزکیک خامه‌ای با بیسکویت ترد و سس بلوبری خانگی.</p>
+          <div class="dish-foot">
+            <span class="stars stars-5" aria-label="امتیاز ۵ از ۵"></span>
+            <a class="dish-order" href="#contact">سفارش<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></a>
+          </div>
+        </div>
+      </article>
+
+      <article class="dish reveal" data-cat="dessert">
+        <div class="dish-media">
+          <img src="https://images.pexels.com/photos/7227435/pexels-photo-7227435.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" alt="چیزکیک با توت‌فرنگی تازه" loading="lazy">
+        </div>
+        <div class="dish-body">
+          <div class="dish-row"><h3 class="dish-name">چیزکیک توت‌فرنگی</h3><span class="dish-dots"></span><span class="dish-price">۱۸۵٬۰۰۰<small>تومان</small></span></div>
+          <p class="dish-desc">بیسکویت ترد، پنیر خامه‌ای و توت‌فرنگی تازه‌ی فصل.</p>
+          <div class="dish-foot">
+            <span class="stars stars-5" aria-label="امتیاز ۵ از ۵"></span>
+            <a class="dish-order" href="#contact">سفارش<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></a>
+          </div>
+        </div>
+      </article>
+
+      <article class="dish reveal" data-cat="dessert">
+        <div class="dish-media">
+          <img src="https://images.pexels.com/photos/30128890/pexels-photo-30128890.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" alt="برش کیک شکلاتی روی بشقاب" loading="lazy">
+        </div>
+        <div class="dish-body">
+          <div class="dish-row"><h3 class="dish-name">کیک شکلات تلخ</h3><span class="dish-dots"></span><span class="dish-price">۱۹۵٬۰۰۰<small>تومان</small></span></div>
+          <p class="dish-desc">کیک شکلات تلخ با گاناش مخملی و مغز نرم؛ همراه همیشگی قهوه.</p>
+          <div class="dish-foot">
+            <span class="stars stars-5" aria-label="امتیاز ۵ از ۵"></span>
+            <a class="dish-order" href="#contact">سفارش<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></a>
+          </div>
+        </div>
+      </article>
+
+      <article class="dish reveal" data-cat="dessert">
+        <div class="dish-media">
+          <img src="https://images.pexels.com/photos/38058464/pexels-photo-38058464.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" alt="دسر توت با سیروپ تمشک" loading="lazy">
+        </div>
+        <div class="dish-body">
+          <div class="dish-row"><h3 class="dish-name">دسر توت و سیروپ</h3><span class="dish-dots"></span><span class="dish-price">۲۰۵٬۰۰۰<small>تومان</small></span></div>
+          <p class="dish-desc">چیزکیک توت با سیروپ تمشک خانگی و خرده‌های بیسکویت کاراملی.</p>
+          <div class="dish-foot">
+            <span class="stars stars-4" aria-label="امتیاز ۴ از ۵"></span>
+            <a class="dish-order" href="#contact">سفارش<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></a>
+          </div>
+        </div>
+      </article>
+
+      <!-- غذاها -->
+      <article class="dish reveal" data-cat="food">
+        <div class="dish-media">
+          <span class="dish-tag">پرفروش</span>
+          <img src="https://images.pexels.com/photos/12469931/pexels-photo-12469931.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" alt="ساندویچ کلاب همراه سیب‌زمینی سرخ‌کرده" loading="lazy">
+        </div>
+        <div class="dish-body">
+          <div class="dish-row"><h3 class="dish-name">ساندویچ کلاب</h3><span class="dish-dots"></span><span class="dish-price">۲۹۵٬۰۰۰<small>تومان</small></span></div>
+          <p class="dish-desc">مرغ گریل، پنیر ورقه‌ای، سبزیجات تازه و سیب‌زمینی سرخ‌کرده‌ی داغ.</p>
+          <div class="dish-foot">
+            <span class="stars stars-5" aria-label="امتیاز ۵ از ۵"></span>
+            <a class="dish-order" href="#contact">سفارش<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></a>
+          </div>
+        </div>
+      </article>
+
+      <article class="dish reveal" data-cat="food">
+        <div class="dish-media">
+          <img src="https://images.pexels.com/photos/4237243/pexels-photo-4237243.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" alt="پیتزا و پاستای ایتالیایی روی میز رستوران" loading="lazy">
+        </div>
+        <div class="dish-body">
+          <div class="dish-row"><h3 class="dish-name">پیتزا ایتالیایی</h3><span class="dish-dots"></span><span class="dish-price">۳۴۵٬۰۰۰<small>تومان</small></span></div>
+          <p class="dish-desc">خمیر تازه، پنیر موزارلا و ریحان؛ پخته‌شده در فر سنگی.</p>
+          <div class="dish-foot">
+            <span class="stars stars-5" aria-label="امتیاز ۵ از ۵"></span>
+            <a class="dish-order" href="#contact">سفارش<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></a>
+          </div>
+        </div>
+      </article>
+
+      <article class="dish reveal" data-cat="food">
+        <div class="dish-media">
+          <img src="https://images.pexels.com/photos/6223229/pexels-photo-6223229.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" alt="پیتزا و پاستا در یک قاب" loading="lazy">
+        </div>
+        <div class="dish-body">
+          <div class="dish-row"><h3 class="dish-name">پاستا آلفردو</h3><span class="dish-dots"></span><span class="dish-price">۳۲۵٬۰۰۰<small>تومان</small></span></div>
+          <p class="dish-desc">پنه با سس خامه‌ای آلفردو، قارچ سوتی و مرغ گریل.</p>
+          <div class="dish-foot">
+            <span class="stars stars-4" aria-label="امتیاز ۴ از ۵"></span>
+            <a class="dish-order" href="#contact">سفارش<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></a>
+          </div>
+        </div>
+      </article>
+
+      <article class="dish reveal" data-cat="food">
+        <div class="dish-media">
+          <img src="https://images.pexels.com/photos/2918521/pexels-photo-2918521.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" alt="پیتزای مخصوص روی بشقاب" loading="lazy">
+        </div>
+        <div class="dish-body">
+          <div class="dish-row"><h3 class="dish-name">پیتزا مخصوص سرآشپز</h3><span class="dish-dots"></span><span class="dish-price">۳۷۵٬۰۰۰<small>تومان</small></span></div>
+          <p class="dish-desc">پپرونی، قارچ و فلفل دلمه‌ای روی خمیر نازک و ترد.</p>
+          <div class="dish-foot">
+            <span class="stars stars-5" aria-label="امتیاز ۵ از ۵"></span>
+            <a class="dish-order" href="#contact">سفارش<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></a>
+          </div>
+        </div>
+      </article>
+
+      <article class="dish reveal" data-cat="food">
+        <div class="dish-media">
+          <span class="dish-tag">تا ساعت ۱۲</span>
+          <img src="https://images.pexels.com/photos/32675098/pexels-photo-32675098.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" alt="صبحانه فرانسوی با کروسان و قهوه" loading="lazy">
+        </div>
+        <div class="dish-body">
+          <div class="dish-row"><h3 class="dish-name">صبحانه فرانسوی</h3><span class="dish-dots"></span><span class="dish-price">۲۱۵٬۰۰۰<small>تومان</small></span></div>
+          <p class="dish-desc">کروسان تازه، کره و مربای خانگی همراه یک فنجان قهوه‌ی دلخواه.</p>
+          <div class="dish-foot">
+            <span class="stars stars-5" aria-label="امتیاز ۵ از ۵"></span>
+            <a class="dish-order" href="#contact">سفارش<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></a>
+          </div>
+        </div>
+      </article>
+
+      <article class="dish reveal" data-cat="food">
+        <div class="dish-media">
+          <img src="https://images.pexels.com/photos/5840092/pexels-photo-5840092.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" alt="صبحانه کامل در بشقاب‌های سرامیکی" loading="lazy">
+        </div>
+        <div class="dish-body">
+          <div class="dish-row"><h3 class="dish-name">صبحانه‌ی کامل</h3><span class="dish-dots"></span><span class="dish-price">۲۴۵٬۰۰۰<small>تومان</small></span></div>
+          <p class="dish-desc">املت، پنیر، گردو، سبزیجات تازه و نان سنگک داغ.</p>
+          <div class="dish-foot">
+            <span class="stars stars-4" aria-label="امتیاز ۴ از ۵"></span>
+            <a class="dish-order" href="#contact">سفارش<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================ درباره ما ============================ -->
+<section class="section" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-visual reveal">
+        <div class="about-frame">
+          <img src="https://images.pexels.com/photos/5192030/pexels-photo-5192030.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1000" alt="باریستای کافه نور در حال آماده‌سازی قهوه" loading="lazy">
+        </div>
+        <div class="about-mini">
+          <img src="https://images.pexels.com/photos/13789908/pexels-photo-13789908.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" alt="گرفتن شات اسپرسو در کافه نور" loading="lazy">
+        </div>
+        <div class="about-badge" aria-hidden="true">
+          <b>۱۲</b>
+          <span>سال تجربه</span>
+        </div>
+      </div>
+
+      <div class="about-text reveal" data-delay="120">
+        <span class="kicker">درباره کافه نور</span>
+        <h2 class="about-title">جایی که قهوه‌ی خوب، <span class="gold-text">بهانه‌ی دور هم بودن</span> می‌شود</h2>
+        <p class="about-p">
+          کافه نور از سال ۱۳۹۳ با یک ایده‌ی ساده شروع شد: قهوه‌ای که در تهران نوشیده می‌شود،
+          باید به‌اندازه‌ی بهترین کافه‌های دنیا خوب باشد. امروز دانه‌های ما را خودمان انتخاب و
+          در کارگاه کوچک‌مان رست می‌کنیم تا هر فنجان، تازه‌ترین طعم ممکن را داشته باشد.
+        </p>
+        <p class="about-p">
+          فضای کافه نور با نور گرم، چوب طبیعی و موسیقی آرام طراحی شده تا هم محل کار و مطالعه باشد
+          و هم جای دورهمی‌های دوستانه و خانوادگی. تیم باریستاهای ما همیشه آماده‌اند تا
+          نوشیدنی مورد علاقه‌تان را دقیقاً همان‌طور که دوست دارید بسازند.
+        </p>
+
+        <div class="about-features">
+          <div class="feature">
+            <span class="feature-ic" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/><circle cx="12" cy="12" r="3.6"/></svg>
+            </span>
+            <div><b>رست اختصاصی</b><span>دانه‌ی تازه‌رست هر هفته در کارگاه خودمان</span></div>
+          </div>
+          <div class="feature">
+            <span class="feature-ic" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19h16M6 19V9l6-4 6 4v10M10 19v-5h4v5"/></svg>
+            </span>
+            <div><b>فضای دنج</b><span>نور گرم، صندلی راحت و موسیقی ملایم</span></div>
+          </div>
+          <div class="feature">
+            <span class="feature-ic" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h18v11H3zM3 11h18M7 15h3"/></svg>
+            </span>
+            <div><b>پرداخت آسان</b><span>کارت، موبایل و پرداخت آنلاین</span></div>
+          </div>
+          <div class="feature">
+            <span class="feature-ic" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12a7 7 0 0 1 14 0M8.5 15.5a4 4 0 0 1 7 0M12 19h.01"/></svg>
+            </span>
+            <div><b>اینترنت پرسرعت</b><span>مناسب کار، جلسه و مطالعه</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ گالری ============================ -->
+<section class="section" id="gallery">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="kicker">گالری تصاویر</span>
+      <h2 class="section-title">نگاهی به <span class="gold-text">فضای کافه نور</span></h2>
+      <p class="section-sub">از عطر دانه‌های تازه‌رست تا میزهای گرم کنار پنجره؛ چند قاب از روزهای ما.</p>
+      <div class="ornament" aria-hidden="true"><span></span><i></i><span></span></div>
+    </div>
+
+    <div class="gallery" id="galleryGrid">
+      <figure class="g-item g-a reveal" data-full="https://images.pexels.com/photos/35134952/pexels-photo-35134952.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1400">
+        <img src="https://images.pexels.com/photos/35134952/pexels-photo-35134952.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=900" alt="فضای داخلی مدرن کافه نور با میزهای چوبی" loading="lazy">
+        <span class="g-zoom" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.6-3.6M11 8v6M8 11h6"/></svg></span>
+        <figcaption class="g-cap"><b>سالن اصلی کافه</b><span>میزهای چوبی و نور گرم</span></figcaption>
+      </figure>
+
+      <figure class="g-item g-c reveal" data-delay="80" data-full="https://images.pexels.com/photos/8847017/pexels-photo-8847017.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1400">
+        <img src="https://images.pexels.com/photos/8847017/pexels-photo-8847017.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=900" alt="گوشه‌ی دنج و دکوراسیون کافه" loading="lazy">
+        <span class="g-zoom" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.6-3.6M11 8v6M8 11h6"/></svg></span>
+        <figcaption class="g-cap"><b>گوشه‌ی دنج</b><span>برای مطالعه و کار</span></figcaption>
+      </figure>
+
+      <figure class="g-item g-c reveal" data-delay="140" data-full="https://images.pexels.com/photos/10439808/pexels-photo-10439808.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1400">
+        <img src="https://images.pexels.com/photos/10439808/pexels-photo-10439808.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=900" alt="دست‌های باریستا روی دستگاه قهوه" loading="lazy">
+        <span class="g-zoom" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.6-3.6M11 8v6M8 11h6"/></svg></span>
+        <figcaption class="g-cap"><b>دست‌های باریستا</b><span>دقت در هر شات</span></figcaption>
+      </figure>
+
+      <figure class="g-item g-b reveal" data-delay="200" data-full="https://images.pexels.com/photos/2775827/pexels-photo-2775827.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1400">
+        <img src="https://images.pexels.com/photos/2775827/pexels-photo-2775827.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=900" alt="دستگاه اسپرسوی حرفه‌ای کافه نور" loading="lazy">
+        <span class="g-zoom" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.6-3.6M11 8v6M8 11h6"/></svg></span>
+        <figcaption class="g-cap"><b>اسپرسو بار</b><span>دستگاه حرفه‌ای دوگروه</span></figcaption>
+      </figure>
+
+      <figure class="g-item g-c reveal" data-delay="260" data-full="https://images.pexels.com/photos/7125781/pexels-photo-7125781.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1400">
+        <img src="https://images.pexels.com/photos/7125781/pexels-photo-7125781.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=900" alt="دانه‌های قهوه‌ی تازه‌رست" loading="lazy">
+        <span class="g-zoom" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.6-3.6M11 8v6M8 11h6"/></svg></span>
+        <figcaption class="g-cap"><b>دانه‌های تازه‌رست</b><span>رست هفتگی</span></figcaption>
+      </figure>
+
+      <figure class="g-item g-c reveal" data-delay="320" data-full="https://images.pexels.com/photos/13119734/pexels-photo-13119734.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1400">
+        <img src="https://images.pexels.com/photos/13119734/pexels-photo-13119734.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=900" alt="کروسان تازه و فنجان قهوه روی میز" loading="lazy">
+        <span class="g-zoom" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.6-3.6M11 8v6M8 11h6"/></svg></span>
+        <figcaption class="g-cap"><b>صبحانه‌ی فرانسوی</b><span>کروسان داغ و قهوه</span></figcaption>
+      </figure>
+
+      <figure class="g-item g-c reveal" data-delay="380" data-full="https://images.pexels.com/photos/14030933/pexels-photo-14030933.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1400">
+        <img src="https://images.pexels.com/photos/14030933/pexels-photo-14030933.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=900" alt="چیزکیک با توت تازه در بشقاب مشکی" loading="lazy">
+        <span class="g-zoom" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.6-3.6M11 8v6M8 11h6"/></svg></span>
+        <figcaption class="g-cap"><b>دسرهای خانگی</b><span>پخته‌شده هر روز صبح</span></figcaption>
+      </figure>
+
+      <figure class="g-item g-c reveal" data-delay="440" data-full="https://images.pexels.com/photos/21558654/pexels-photo-21558654.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1400">
+        <img src="https://images.pexels.com/photos/21558654/pexels-photo-21558654.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=900" alt="میز کافه با قهوه و کروسان" loading="lazy">
+        <span class="g-zoom" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.6-3.6M11 8v6M8 11h6"/></svg></span>
+        <figcaption class="g-cap"><b>میز کنار پنجره</b><span>محبوب‌ترین جای کافه</span></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ نظرات مشتریان ============================ -->
+<section class="section" id="testimonials">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="kicker">نظرات مشتریان</span>
+      <h2 class="section-title">مهمان‌های ما <span class="gold-text">چه می‌گویند؟</span></h2>
+      <div class="ornament" aria-hidden="true"><span></span><i></i><span></span></div>
+    </div>
+
+    <div class="rating-box reveal" data-delay="80">
+      <div style="display:flex;align-items:center;gap:14px">
+        <b>۴.۹</b>
+        <div>
+          <span class="stars stars-5" aria-label="امتیاز ۴.۹ از ۵"></span>
+          <div class="txt" style="margin-top:6px">میانگین امتیاز ۸۴۰ نظر ثبت‌شده</div>
+        </div>
+      </div>
+      <span class="sep" aria-hidden="true"></span>
+      <div class="txt">۹۶٪ مهمان‌ها کافه نور را به دوستانشان پیشنهاد می‌کنند</div>
+    </div>
+
+    <div class="tst-grid">
+      <article class="tst reveal">
+        <span class="tst-stars"><span class="stars stars-5" role="img" aria-label="امتیاز ۵ از ۵"></span></span>
+        <p class="tst-text">
+          «بهترین اسپرسویی که در تهران خورده‌ام. فضای کافه آرام و دلنشین است و باریستاها
+          با حوصله درباره‌ی هر دانه توضیح می‌دهند. عملاً دفتر کار دوم من شده!»
+        </p>
+        <div class="tst-person">
+          <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="سارا محمدی" loading="lazy">
+          <div><b>سارا محمدی</b><span>طراح گرافیک</span></div>
+        </div>
+      </article>
+
+      <article class="tst reveal" data-delay="120">
+        <span class="tst-stars"><span class="stars stars-5" role="img" aria-label="امتیاز ۵ از ۵"></span></span>
+        <p class="tst-text">
+          «چیزکیک بلوبری و آیس لاته‌شان ترکیب بی‌نقصی است. سفارش آنلاین سریع بود و
+          بسته‌بندی هم بسیار مرتب و شیک. تجربه‌ای کاملاً حرفه‌ای.»
+        </p>
+        <div class="tst-person">
+          <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="امیر رضایی" loading="lazy">
+          <div><b>امیر رضایی</b><span>برنامه‌نویس</span></div>
+        </div>
+      </article>
+
+      <article class="tst reveal" data-delay="240">
+        <span class="tst-stars"><span class="stars stars-5" role="img" aria-label="امتیاز ۵ از ۵"></span></span>
+        <p class="tst-text">
+          «برای عکاسی و دورهمی‌های کوچک همیشه کافه نور را انتخاب می‌کنم؛ نور طبیعی پنجره‌ها
+          عالی است و سرو چای سنتی‌شان واقعاً حس خانه را می‌دهد.»
+        </p>
+        <div class="tst-person">
+          <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="نگار کریمی" loading="lazy">
+          <div><b>نگار کریمی</b><span>عکاس</span></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ تماس با ما ============================ -->
+<section class="section" id="contact">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="kicker">تماس با ما</span>
+      <h2 class="section-title">منتظر <span class="gold-text">دیدارتان</span> هستیم</h2>
+      <p class="section-sub">برای رزرو میز، سفارش بیرون‌بر یا هماهنگی دورهمی‌های گروهی کافی است تماس بگیرید.</p>
+      <div class="ornament" aria-hidden="true"><span></span><i></i><span></span></div>
+    </div>
+
+    <div class="contact-grid">
+      <div class="info-card reveal">
+        <div class="info-list">
+          <div class="info-row">
+            <span class="info-ic" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-5.6 7-11a7 7 0 1 0-14 0c0 5.4 7 11 7 11Z"/><circle cx="12" cy="10" r="2.6"/></svg>
+            </span>
+            <div>
+              <b>آدرس کافه</b>
+              <p>تهران، خیابان ولیعصر، نبش کوچه نور، پلاک ۱۲۴، طبقه‌ی همکف</p>
+            </div>
+          </div>
+
+          <div class="info-row">
+            <span class="info-ic" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5h4l2 5-2.5 1.5a12 12 0 0 0 6 6L14 15l5 2v4a12 12 0 0 1-12-12Z"/></svg>
+            </span>
+            <div>
+              <b>شماره تماس</b>
+              <p><a href="tel:+982188776655" dir="ltr" style="display:inline-block">۰۲۱-۸۸۷۷۶۶۵۵</a> &nbsp;|&nbsp; <a href="tel:+989123456789" dir="ltr" style="display:inline-block">۰۹۱۲۳۴۵۶۷۸۹</a></p>
+            </div>
+          </div>
+
+          <div class="info-row">
+            <span class="info-ic" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18v12H3z"/><path d="m3 7 9 6 9-6"/></svg>
+            </span>
+            <div>
+              <b>ایمیل</b>
+              <p><a href="mailto:info@cafenoor.ir" dir="ltr" style="display:inline-block">info@cafenoor.ir</a></p>
+            </div>
+          </div>
+
+          <div class="info-row">
+            <span class="info-ic" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>
+            </span>
+            <div>
+              <b>ساعات کاری</b>
+              <p>همه‌ی روزهای هفته باز هستیم؛ برای جزئیات، جدول پایین را ببینید.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="hours">
+          <h4>ساعات کاری کافه نور</h4>
+          <div class="hours-row"><span>شنبه تا چهارشنبه</span><em></em><span>۸:۰۰ — ۲۳:۰۰</span></div>
+          <div class="hours-row"><span>پنجشنبه</span><em></em><span>۸:۰۰ — ۲۴:۰۰</span></div>
+          <div class="hours-row"><span>جمعه</span><em></em><span>۱۰:۰۰ — ۲۴:۰۰</span></div>
+          <div class="hours-row"><span>سرو صبحانه</span><em></em><span>تا ساعت ۱۲</span></div>
+        </div>
+
+        <div class="map-strip">
+          <p>می‌خواهید مسیر را ببینید؟ روی نقشه‌ی گوگل بازش کنید.</p>
+          <a href="https://www.google.com/maps/search/?api=1&amp;query=Valiasr+Street+Tehran" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-5.6 7-11a7 7 0 1 0-14 0c0 5.4 7 11 7 11Z"/><circle cx="12" cy="10" r="2.6"/></svg>
+            مشاهده روی نقشه
+          </a>
+        </div>
+      </div>
+
+      <aside class="cta-card reveal" data-delay="120">
+        <h3>رزرو میز یا سفارش سریع</h3>
+        <p>
+          کافی است در واتساپ پیام بدهید؛ سفارش شما را ثبت می‌کنیم و میز دلخواه‌تان را
+          کنار پنجره یا در گوشه‌ی دنج کافه رزرو نگه می‌داریم.
+        </p>
+        <div class="cta-actions">
+          <a class="btn btn-green btn-block" href="https://wa.me/989123456789?text=%D8%B3%D9%84%D8%A7%D9%85%21%20%D8%A8%D8%B1%D8%A7%DB%8C%20%D8%B1%D8%B2%D8%B1%D9%88%20%D9%85%DB%8C%D8%B2%20%D8%AF%D8%B1%20%DA%A9%D8%A7%D9%81%D9%87%20%D9%86%D9%88%D8%B1%20%D9%BE%DB%8C%D8%A7%D9%85%20%D9%85%DB%8C%E2%80%8C%D8%AF%D9%87%D9%85." target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.6 2 2.2 6.4 2.2 11.84c0 1.74.46 3.44 1.32 4.94L2 22l5.34-1.4a9.9 9.9 0 0 0 4.7 1.2h.01c5.43 0 9.84-4.4 9.84-9.84C21.89 6.4 17.47 2 12.04 2Zm5.76 14.06c-.24.68-1.4 1.3-1.93 1.35-.53.05-1.02.24-3.44-.72-2.9-1.15-4.72-4.15-4.86-4.34-.14-.2-1.15-1.54-1.15-2.94 0-1.4.73-2.08 1-2.37.24-.26.53-.33.72-.33.19 0 .39 0 .56.01.19.01.43-.07.67.51.24.6.82 2 .89 2.14.07.14.12.31.02.5-.1.2-.15.32-.3.5-.14.16-.3.37-.43.5-.14.14-.29.29-.12.58.17.29.72 1.2 1.55 1.94 1.06.95 1.96 1.24 2.25 1.38.29.14.46.12.63-.07.17-.2.72-.85.92-1.14.19-.29.38-.24.65-.14.26.1 1.67.79 1.96.93.29.14.48.22.55.34.07.13.07.75-.17 1.43Z"/></svg>
+            گفت‌وگو در واتساپ
+          </a>
+          <a class="btn btn-ghost btn-block" href="tel:+982188776655">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5h4l2 5-2.5 1.5a12 12 0 0 0 6 6L14 15l5 2v4a12 12 0 0 1-12-12Z"/></svg>
+            تماس تلفنی با کافه
+          </a>
+        </div>
+        <p class="cta-note">پاسخ‌گویی هر روز از ساعت ۸ صبح تا پایان شب</p>
+      </aside>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ============================ فوتر ============================ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-about">
+        <div class="footer-brand">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 9h13v6a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5V9Z"/>
+              <path d="M17 10h1.8a2.7 2.7 0 0 1 0 5.4H17"/>
+              <path d="M8 6c0-1.1 1.3-1.4 1.3-2.5M12.4 6c0-1.1 1.3-1.4 1.3-2.5"/>
+            </svg>
+          </span>
+          <span class="brand-text"><strong>کافه نور</strong><em>CAFÉ NOOR</em></span>
+        </div>
+        <p>
+          کافه نور از سال ۱۳۹۳ میزبان مهمان‌هایش است؛ با قهوه‌ی تازه‌رست،
+          دسرهای خانگی و فضایی گرم در قلب تهران.
+        </p>
+        <div class="socials">
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="اینستاگرام کافه نور">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg>
+          </a>
+          <a href="https://telegram.org/" target="_blank" rel="noopener" aria-label="تلگرام کافه نور">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.7 4.3 2.9 11.5c-1.1.4-1.1 1 .1 1.3l4.6 1.4 1.7 5.3c.2.6.4.7 1 .3l2.6-1.9 4.5 3.3c.8.5 1.3.2 1.5-.7l2.8-13.2c.2-1-.4-1.4-1-1.1ZM9.6 14.3l8-5.1c.3-.2.5-.1.3.2l-6.6 6-.3 3-1.4-4.1Z"/></svg>
+          </a>
+          <a href="https://wa.me/989123456789" target="_blank" rel="noopener" aria-label="واتساپ کافه نور">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.6 2 2.2 6.4 2.2 11.84c0 1.74.46 3.44 1.32 4.94L2 22l5.34-1.4a9.9 9.9 0 0 0 4.7 1.2h.01c5.43 0 9.84-4.4 9.84-9.84C21.89 6.4 17.47 2 12.04 2Zm5.76 14.06c-.24.68-1.4 1.3-1.93 1.35-.53.05-1.02.24-3.44-.72-2.9-1.15-4.72-4.15-4.86-4.34-.14-.2-1.15-1.54-1.15-2.94 0-1.4.73-2.08 1-2.37.24-.26.53-.33.72-.33.19 0 .39 0 .56.01.19.01.43-.07.67.51.24.6.82 2 .89 2.14.07.14.12.31.02.5-.1.2-.15.32-.3.5-.14.16-.3.37-.43.5-.14.14-.29.29-.12.58.17.29.72 1.2 1.55 1.94 1.06.95 1.96 1.24 2.25 1.38.29.14.46.12.63-.07.17-.2.72-.85.92-1.14.19-.29.38-.24.65-.14.26.1 1.67.79 1.96.93.29.14.48.22.55.34.07.13.07.75-.17 1.43Z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>دسترسی سریع</h4>
+        <ul>
+          <li><a href="#home">خانه</a></li>
+          <li><a href="#menu">منوی کافه</a></li>
+          <li><a href="#about">درباره ما</a></li>
+          <li><a href="#gallery">گالری تصاویر</a></li>
+          <li><a href="#testimonials">نظرات مشتریان</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>منوی ما</h4>
+        <ul>
+          <li><a href="#menu">قهوه‌های تخصصی</a></li>
+          <li><a href="#menu">چای و دمنوش</a></li>
+          <li><a href="#menu">نوشیدنی‌های سرد</a></li>
+          <li><a href="#menu">دسرهای خانگی</a></li>
+          <li><a href="#menu">صبحانه و غذا</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>اطلاعات تماس</h4>
+        <ul class="foot-contact">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-5.6 7-11a7 7 0 1 0-14 0c0 5.4 7 11 7 11Z"/><circle cx="12" cy="10" r="2.6"/></svg>
+            <span>تهران، خیابان ولیعصر، نبش کوچه نور، پلاک ۱۲۴</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5h4l2 5-2.5 1.5a12 12 0 0 0 6 6L14 15l5 2v4a12 12 0 0 1-12-12Z"/></svg>
+            <a href="tel:+982188776655">۰۲۱-۸۸۷۷۶۶۵۵</a>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18v12H3z"/><path d="m3 7 9 6 9-6"/></svg>
+            <a href="mailto:info@cafenoor.ir">info@cafenoor.ir</a>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>
+            <span>هر روز، از ۸:۰۰ صبح تا ۲۴:۰۰</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© <b>کافه نور</b> — تمام حقوق محفوظ است. ۱۴۰۵</span>
+      <span>طراحی‌شده با عشق و یک فنجان قهوه‌ی تازه</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============================ عناصر شناور ============================ -->
+<a class="fab fab-wa" href="https://wa.me/989123456789" target="_blank" rel="noopener" aria-label="گفت‌وگو در واتساپ">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.6 2 2.2 6.4 2.2 11.84c0 1.74.46 3.44 1.32 4.94L2 22l5.34-1.4a9.9 9.9 0 0 0 4.7 1.2h.01c5.43 0 9.84-4.4 9.84-9.84C21.89 6.4 17.47 2 12.04 2Zm5.76 14.06c-.24.68-1.4 1.3-1.93 1.35-.53.05-1.02.24-3.44-.72-2.9-1.15-4.72-4.15-4.86-4.34-.14-.2-1.15-1.54-1.15-2.94 0-1.4.73-2.08 1-2.37.24-.26.53-.33.72-.33.19 0 .39 0 .56.01.19.01.43-.07.67.51.24.6.82 2 .89 2.14.07.14.12.31.02.5-.1.2-.15.32-.3.5-.14.16-.3.37-.43.5-.14.14-.29.29-.12.58.17.29.72 1.2 1.55 1.94 1.06.95 1.96 1.24 2.25 1.38.29.14.46.12.63-.07.17-.2.72-.85.92-1.14.19-.29.38-.24.65-.14.26.1 1.67.79 1.96.93.29.14.48.22.55.34.07.13.07.75-.17 1.43Z"/></svg>
+</a>
+<button class="fab fab-top" id="backTop" aria-label="بازگشت به بالای صفحه">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M6 11l6-6 6 6"/></svg>
+</button>
+
+<!-- ============================ لایت‌باکس گالری ============================ -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="نمایش تصویر گالری" hidden>
+  <button class="lightbox-close" id="lightboxClose" aria-label="بستن تصویر">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg>
+  </button>
+  <img id="lightboxImg" alt="تصویر گالری کافه نور">
+  <p class="lightbox-cap" id="lightboxCap"></p>
+</div>
+
+<script>
+(function () {
+  'use strict';
+
+  var d = document;
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---------- هدر چسبان ---------- */
+  var header = d.getElementById('siteHeader');
+  var backTop = d.getElementById('backTop');
+
+  function onScroll() {
+    var y = window.scrollY || window.pageYOffset;
+    header.classList.toggle('is-stuck', y > 40);
+    backTop.classList.toggle('is-on', y > 600);
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  backTop.addEventListener('click', function () {
+    window.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' });
+  });
+
+  /* ---------- منوی موبایل ---------- */
+  var navToggle = d.getElementById('navToggle');
+  var mainNav = d.getElementById('mainNav');
+
+  function closeNav() {
+    mainNav.classList.remove('is-open');
+    navToggle.classList.remove('is-open');
+    navToggle.setAttribute('aria-expanded', 'false');
+  }
+
+  navToggle.addEventListener('click', function () {
+    var open = mainNav.classList.toggle('is-open');
+    navToggle.classList.toggle('is-open', open);
+    navToggle.setAttribute('aria-expanded', String(open));
+  });
+
+  mainNav.addEventListener('click', function (e) {
+    if (e.target.closest('a')) closeNav();
+  });
+
+  d.addEventListener('click', function (e) {
+    if (!mainNav.classList.contains('is-open')) return;
+    if (e.target.closest('#mainNav') || e.target.closest('#navToggle')) return;
+    closeNav();
+  });
+
+  /* ---------- فیلتر منو ---------- */
+  var tabs = Array.prototype.slice.call(d.querySelectorAll('.tab'));
+  var dishes = Array.prototype.slice.call(d.querySelectorAll('.dish'));
+
+  tabs.forEach(function (tab) {
+    tab.addEventListener('click', function () {
+      tabs.forEach(function (t) {
+        t.classList.remove('is-active');
+        t.setAttribute('aria-selected', 'false');
+      });
+      tab.classList.add('is-active');
+      tab.setAttribute('aria-selected', 'true');
+
+      var filter = tab.getAttribute('data-filter');
+      dishes.forEach(function (dish) {
+        var show = filter === 'all' || dish.getAttribute('data-cat') === filter;
+        dish.style.display = show ? '' : 'none';
+        if (show) {
+          dish.classList.add('in');
+        }
+      });
+    });
+  });
+
+  /* ---------- نمایان‌شدن با اسکرول ---------- */
+  var revealEls = Array.prototype.slice.call(d.querySelectorAll('.reveal'));
+
+  if ('IntersectionObserver' in window && !reduce) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        var el = entry.target;
+        var delay = parseInt(el.getAttribute('data-delay') || '0', 10);
+        setTimeout(function () { el.classList.add('in'); }, delay);
+        io.unobserve(el);
+      });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+
+    revealEls.forEach(function (el) { io.observe(el); });
+  } else {
+    revealEls.forEach(function (el) { el.classList.add('in'); });
+  }
+
+  /* ---------- لینک فعال در ناوبری ---------- */
+  var navLinks = Array.prototype.slice.call(d.querySelectorAll('.main-nav a'));
+  var sections = navLinks
+    .map(function (a) { return d.querySelector(a.getAttribute('href')); })
+    .filter(Boolean);
+
+  if ('IntersectionObserver' in window && sections.length) {
+    var spy = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        navLinks.forEach(function (a) {
+          a.classList.toggle('is-active', a.getAttribute('href') === '#' + entry.target.id);
+        });
+      });
+    }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
+
+    sections.forEach(function (s) { spy.observe(s); });
+  }
+
+  /* ---------- لایت‌باکس گالری ---------- */
+  var lightbox = d.getElementById('lightbox');
+  var lightboxImg = d.getElementById('lightboxImg');
+  var lightboxCap = d.getElementById('lightboxCap');
+  var lightboxClose = d.getElementById('lightboxClose');
+  var items = Array.prototype.slice.call(d.querySelectorAll('.g-item'));
+
+  function openLightbox(item) {
+    var img = item.querySelector('img');
+    var cap = item.querySelector('.g-cap b');
+    lightboxImg.src = item.getAttribute('data-full') || img.src;
+    lightboxImg.alt = img.alt || 'تصویر گالری کافه نور';
+    lightboxCap.textContent = cap ? cap.textContent : '';
+    lightbox.hidden = false;
+    requestAnimationFrame(function () { lightbox.classList.add('is-open'); });
+    d.body.classList.add('no-scroll');
+  }
+
+  function closeLightbox() {
+    lightbox.classList.remove('is-open');
+    d.body.classList.remove('no-scroll');
+    setTimeout(function () {
+      lightbox.hidden = true;
+      lightboxImg.removeAttribute('src');
+    }, 380);
+  }
+
+  items.forEach(function (item) {
+    item.addEventListener('click', function () { openLightbox(item); });
+  });
+
+  lightboxClose.addEventListener('click', closeLightbox);
+  lightbox.addEventListener('click', function (e) {
+    if (e.target === lightbox) closeLightbox();
+  });
+  d.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') {
+      if (lightbox.classList.contains('is-open')) closeLightbox();
+      closeNav();
+    }
+  });
+
+  /* ---------- اسکرول نرم با درنظرگرفتن ارتفاع هدر ---------- */
+  d.querySelectorAll('a[href^="#"]').forEach(function (link) {
+    link.addEventListener('click', function (e) {
+      var id = link.getAttribute('href');
+      if (!id || id === '#') return;
+      var target = d.querySelector(id);
+      if (!target) return;
+      e.preventDefault();
+      var offset = header.offsetHeight - 6;
+      var top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+      window.scrollTo({ top: top < 0 ? 0 : top, behavior: reduce ? 'auto' : 'smooth' });
+      if (history.replaceState) history.replaceState(null, '', id);
+    });
+  });
+})();
+</script>
+</body>
+</html>
